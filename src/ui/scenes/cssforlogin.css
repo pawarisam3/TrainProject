@@ -1,0 +1,25 @@
+.login-bg{
+    -fx-background-color:linear-gradient(to bottom right, #2E1542,#5D1594);
+}
+
+.textfield-design{
+    -fx-background-color: transparent;
+    -fx-border-color:#9a31eb;
+    -fx-border-width: 0px 0px 3px 0px;
+    -fx-text-inner-color: white;
+}
+
+.button-design{
+    -fx-background-color:#9a31eb;
+    -fx-background-radius:40px;
+    -fx-text-fill:white;
+    -fx-cursor:hand;
+}
+
+.button-design:hover{
+    -fx-background-color:#b081d7;
+}
+
+.hyperlink-design{
+    -fx-text-fill:#9a31eb;
+}
