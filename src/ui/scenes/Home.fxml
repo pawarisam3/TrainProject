@@ -2,61 +2,43 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.HomeController">
+<AnchorPane prefHeight="513.0" prefWidth="891.0" style="-fx-background-color: #5c0368; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.HomeController">
    <children>
-      <ScrollPane layoutX="-5.0" layoutY="-8.0" prefHeight="513.0" prefWidth="903.0">
-         <content>
-            <AnchorPane prefHeight="513.0" prefWidth="891.0" style="-fx-background-color: #131022;">
-               <children>
-                  <Label fx:id="welcomeuser" layoutX="12.0" layoutY="-15.0" prefHeight="101.0" prefWidth="773.0" style="-fx-font-size: 36px; -fx-text-fill: white;" styleClass="welcome-label" stylesheets="@MainCss.css" text="ชื่อจริงจะแสดงที่นี่" textFill="WHITE">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="clockLabel" layoutX="15.0" layoutY="57.0" prefHeight="50.0" prefWidth="462.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="เวลาปัจจุบันจะมาแสดงตรงนี้">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="newsImageTop" fitHeight="250.0" fitWidth="441.0" layoutX="220.0" layoutY="215.0" preserveRatio="true" />
-                  <Button fx:id="prevButton" layoutX="97.0" layoutY="319.0" style="-fx-font-size: 30px;" styleClass="button3" stylesheets="@MainCss.css" text="&lt;" textFill="WHITE" />
-                  <Button fx:id="nextButton" layoutX="752.0" layoutY="317.0" style="-fx-font-size: 30px;" styleClass="button3" stylesheets="@MainCss.css" text="&gt;" textFill="WHITE" />
-                  <Label fx:id="newsLabelBottom" layoutY="185.0" prefWidth="800.0" style="-fx-font-size: 18px; -fx-text-fill: yellow;" text="ข่าวสาร: ระบบรถไฟมีการปรับเวลาให้บริการในบางเส้นทาง กรุณาตรวจสอบ!" />
-                  <Label fx:id="latestBookingLabel" layoutX="15.0" layoutY="98.0" prefHeight="50.0" prefWidth="780.0" style="-fx-text-fill: #00ff00; -fx-font-size: 20px;" text="ข้อมูลจองล่าสุดจะมาแสดงที่นี่" />
-                  <Label layoutX="360.0" layoutY="145.0" prefHeight="37.0" prefWidth="180.0" text="ประชาสัมพันธ์" textFill="WHITE">
-                     <font>
-                        <Font name="THNiramitAS" size="41.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="389.0" layoutY="617.0" prefHeight="46.0" prefWidth="108.0" text="วิธีใช้งาน" textFill="WHITE">
-                     <font>
-                        <Font name="THNiramitAS" size="41.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="611.0" fitWidth="1359.0" layoutX="9.0" layoutY="670.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/Howto1.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="603.0" fitWidth="1096.0" layoutX="-1.0" layoutY="1222.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/Howto2.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="603.0" fitWidth="935.0" layoutY="1744.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Images/Howto3.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-         </content>
-      </ScrollPane>
+      <ImageView fx:id="newsImageTop" fitHeight="250.0" fitWidth="441.0" layoutX="220.0" layoutY="222.0" preserveRatio="true" />
+      <Button fx:id="prevButton" layoutX="154.0" layoutY="309.0" style="-fx-font-size: 30px; -fx-background-color: tran;" stylesheets="@MainCss.css" text="&lt;" textFill="WHITE" />
+      <Button fx:id="nextButton" layoutX="669.0" layoutY="309.0" style="-fx-font-size: 30px; -fx-background-color: tran;" styleClass="button3" stylesheets="@MainCss.css" text="&gt;" textFill="WHITE" />
+      <Label fx:id="newsLabelBottom" layoutX="6.0" layoutY="477.0" prefWidth="800.0" style="-fx-font-size: 18px; -fx-text-fill: yellow;" text="ข่าวสาร: ระบบรถไฟมีการปรับเวลาให้บริการในบางเส้นทาง กรุณาตรวจสอบ!" />
+      <Label fx:id="latestBookingLabel" layoutX="25.0" layoutY="98.0" prefHeight="50.0" prefWidth="780.0" style="-fx-text-fill: #00ff00; -fx-font-size: 20px;" text="ข้อมูลจองล่าสุดจะมาแสดงที่นี่" />
+      <Pane layoutX="748.0" layoutY="11.0" prefHeight="61.0" prefWidth="124.0" style="-fx-background-color: #35013d; -fx-background-radius: 25px;">
+         <children>
+            <Label fx:id="clockLabel" layoutX="19.0" layoutY="6.0" prefHeight="50.0" prefWidth="99.0" style="-fx-text-fill: white; -fx-font-size: 24px;" text="เวลาปัจจุบันจะมาแสดงตรงนี้">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="welcomeuser" layoutX="22.0" layoutY="-8.0" prefHeight="101.0" prefWidth="493.0" text="Real name" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="316.0" layoutY="160.0" prefHeight="60.0" prefWidth="267.0" text="Information" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="41.0" />
+         </font>
+      </Label>
+      <Line endX="727.111083984375" endY="1.52587890625E-5" layoutX="164.0" layoutY="155.0" startX="-163.55555725097656" startY="1.52587890625E-5" stroke="#7c2f8d" />
+      <Label fx:id="welcomeuser1" layoutX="22.0" layoutY="67.0" prefHeight="49.0" prefWidth="419.0" text="Your Latest Booking" textFill="WHITE">
+         <font>
+            <Font name="Arial Black" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

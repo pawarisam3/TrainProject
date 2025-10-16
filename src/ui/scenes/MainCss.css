@@ -16,7 +16,7 @@
 
 .button2
 {
--fx-background-color : #393351;
+-fx-background-color : #36dbb3;
 -fx-background-radius :  20;
 }
 .button2:hover
@@ -32,7 +32,7 @@
 
 .button3
 {
-    -fx-background-color : #141124;
+    -fx-background-color : #3f0149;
     -fx-background-radius :  0 0 0 0;
 }
 .button3:hover
@@ -62,9 +62,9 @@
 
 
 .combo-box {
-    -fx-background-color: #141124;
+    -fx-background-color: #45034f;
     -fx-border-color: #515658;
-    -fx-border-radius: 30;
+    -fx-border-radius: 1;
     -fx-font-size: 20px;
     -fx-text-fill: white;
 }
@@ -72,21 +72,21 @@
 
 .combo-box:hover
 {
-    -fx-background-color : #141124;
+    -fx-background-color : #5e076e;
     -fx-border-color:  #FFFF;
-    -fx-border-radius: 30;
+    -fx-border-radius: 1;
 }
 .combo-box:pressed
 {
-    -fx-background-color : #141124;
+    -fx-background-color : #6f0f80;
     -fx-border-color:  #FFFF;
-    -fx-border-radius: 30;
+    -fx-border-radius: 1;
 }
 
 .table-view .column-header,
 .table-view .column-header-background .filler {
     -fx-cell-size : 20;
-    -fx-background-color:   #141124;
+    -fx-background-color:   #35013d;
 }
 .table-view .column-header .label{
 
@@ -107,16 +107,13 @@
         -fx-text-fill: #fff;
 
  }
-/* scroll bar starts here */
 
-/* The increment and decrement button CSS class of scrollbar */
 .table-view .increment-button ,.table-view .decrement-button {
     -fx-background-color:transparent;
 	-fx-background-radius: 2em;
 
 }
 
-/* The main scrollbar **track** CSS class  */
 .table-view .scroll-bar:horizontal .track,
 .table-view .scroll-bar:vertical .track{
 	-fx-background-color: transparent;
@@ -125,7 +122,6 @@
 	-fx-border-radius:2em;
 }
 
-/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
 .table-view .scroll-bar:horizontal .thumb,
 .table-view .scroll-bar:vertical .thumb {
     -fx-background-color:derive( #2D75E8,90%);
@@ -133,8 +129,6 @@
 	-fx-background-radius: 2em;
 
 }
-
-/* chart properties */
 
 .chart {
     -fx-padding: 10px;
@@ -158,16 +152,26 @@
     -fx-border-color: transparent;
     -fx-border-width: 0;
     -fx-background-radius: 20;
-    -fx-background-color: #131022;
+    -fx-background-color: #a25bc0;
 }
 
 .list-view {
-    -fx-background-color: #1f1b43;
-    -fx-control-inner-background: #1f1b43;
+    -fx-background-color: #35013d;
+    -fx-control-inner-background: #35013d;
     -fx-background-insets: 0;
     -fx-background-radius: 10;
     -fx-border-color: transparent;
     -fx-font-size: 20px;
+}
+
+.combo-box .text {
+    -fx-fill: white;
+}
+.combo-box .list-cell {
+    -fx-text-fill: white;
+}
+.combo-box .text-field {
+    -fx-text-fill: white;
 }
 
 .text-area {
@@ -179,7 +183,7 @@
 }
 
 .text-field {
-    -fx-background-color: #1f1b43;
+    -fx-background-color: #45034f;
     -fx-background-radius: 50;
     -fx-border-color: transparent;
     -fx-border-width: 0;

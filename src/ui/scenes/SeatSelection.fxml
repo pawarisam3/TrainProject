@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="498.0" style="-fx-background-color: #5c0368;" styleClass="linear-grad" stylesheets="@MainCss.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controllers.SeatSelectionController">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="495.0" prefWidth="479.0" spacing="10" style="-fx-background-color: #5c0368;" styleClass="rounded-box" stylesheets="@MainCss.css">
+         <children>
+            <ScrollPane fitToHeight="true" fitToWidth="true">
+               <content>
+                  <GridPane fx:id="seatGrid" hgap="10" style="-fx-background-color: #35013d;" stylesheets="@MainCss.css" vgap="10">
+                    <padding>
+                        <Insets bottom="15" left="30" right="30" top="15" />
+                    </padding>
+                </GridPane>
+               </content>
+            </ScrollPane>
+            <HBox alignment="CENTER" prefHeight="12.0" prefWidth="754.0" spacing="10" stylesheets="@MainCss.css">
+               <children>
+                  <Button fx:id="backButton" prefHeight="38.0" prefWidth="103.0" styleClass="button2" stylesheets="@MainCss.css" text="Back" textFill="WHITE" />
+                  <Button fx:id="confirmButton" styleClass="button2" stylesheets="@MainCss.css" text="Confirm Seats" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

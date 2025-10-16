@@ -30,7 +30,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setResizable(false);
         stage.initStyle(StageStyle.TRANSPARENT);
-        stage.setTitle("The Train Booking Application");
+        stage.setTitle("ChookChak");
         stage.getIcons().add(new Image(App.class.getResourceAsStream("/ui/scenes/Images/logo1.png")));
 
         dragable(root);

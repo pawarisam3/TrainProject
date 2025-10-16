@@ -27,7 +27,7 @@ public class TrainService {
                     }
                 })
                 .filter(Objects::nonNull)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public List<Train> getAllTrains() { return new ArrayList<>(trains); }
@@ -57,7 +57,7 @@ public class TrainService {
     }
 
     private void saveTrains() {
-        List<String> lines = trains.stream().map(Train::toCSV).toList();
+        List<String> lines = trains.stream().map(Train::toCSV).collect(Collectors.toList());
         CSVUtils.writeLines(TRAIN_FILE, lines);
     }
 

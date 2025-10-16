@@ -38,6 +38,16 @@ public class MainFrameController {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
             Parent content = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof SearchController) {
+                ((SearchController) controller).setUser(Session.getCurrentUser());
+            } else if (controller instanceof BookingHistoryController) {
+                ((BookingHistoryController) controller).setMainController(this);
+                ((BookingHistoryController) controller).setUser(Session.getCurrentUser());
+            } else if (controller instanceof BookingDetailsController) {
+                ((BookingDetailsController) controller).setMainController(this);
+            }
             setupContent(content);
         } catch (IOException e) {
             e.printStackTrace();
@@ -45,7 +55,6 @@ public class MainFrameController {
     }
 
     private void setupContent(Parent content) {
-        content.setEffect(createGlowEffect());
 
         centerPane.getChildren().clear();
         centerPane.getChildren().add(content);
@@ -59,6 +68,23 @@ public class MainFrameController {
         TranslateTransition tt = new TranslateTransition(Duration.millis(400), content);
         tt.setToX(0);
         tt.play();
+    }
+
+    public void loadBookingDetails(String fxmlPath, Booking booking) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
+            Parent content = loader.load();
+
+            Object controller = loader.getController();
+            if (controller instanceof BookingDetailsController) {
+                ((BookingDetailsController) controller).setMainController(this);
+                ((BookingDetailsController) controller).setBooking(booking);
+            }
+
+            setupContent(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -85,7 +111,8 @@ public class MainFrameController {
 
     @FXML
     private void onAdmin() {
-        
+        loadContent("/ui/scenes/AdminTrainManagement.fxml");
+        animateSelectedButton(adminBtn);
     }
 
     @FXML
@@ -119,12 +146,14 @@ public class MainFrameController {
 
     @FXML
     private void onSearch() {
-        
+        loadContent("/ui/scenes/Search.fxml");
+        animateSelectedButton(searchBtn);
     }
 
     @FXML
     private void onBookingHistory() {
-        
+        loadContent("/ui/scenes/BookingHistory.fxml");
+        animateSelectedButton(historyBtn);
     }
 
     @FXML
@@ -228,20 +257,5 @@ public class MainFrameController {
         ParallelTransition appear = new ParallelTransition(fadeIn, scaleUp);
         SequentialTransition bounceIn = new SequentialTransition(appear, scaleDown);
         bounceIn.play();
-    }
-
-    private DropShadow createGlowEffect() {
-        DropShadow glow = new DropShadow();
-        glow.setColor(Color.PURPLE);
-        glow.setRadius(20);
-        glow.setSpread(0.6);
-        Timeline timeline = new Timeline(
-            new KeyFrame(Duration.ZERO, new KeyValue(glow.spreadProperty(), 0.3)),
-            new KeyFrame(Duration.seconds(1.5), new KeyValue(glow.spreadProperty(), 0.8)),
-            new KeyFrame(Duration.seconds(3), new KeyValue(glow.spreadProperty(), 0.3))
-        );
-        timeline.setCycleCount(Animation.INDEFINITE);
-        timeline.play();
-        return glow;
     }
 }
